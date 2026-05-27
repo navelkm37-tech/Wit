@@ -98,8 +98,18 @@ app.post('/verify-otp', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, '0.0.0.0', () => {
+const server = app.listen(PORT, '0.0.0.0', () => {
     console.log(`🚀 OTP API يعمل على port ${PORT}`);
+});
+server.keepAliveTimeout = 120000;
+server.headersTimeout = 120000;
+
+// منع Railway من إيقاف العملية عند SIGTERM أثناء الربط الأول
+process.on('SIGTERM', () => {
+    console.log('⚠️ SIGTERM استُقبل - البوت يستمر');
+});
+process.on('SIGINT', () => {
+    process.exit(0);
 });
 
 // ══════════════════════════════════════════
