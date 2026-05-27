@@ -1,0 +1,20 @@
+{
+  "name": "hawks-bot",
+  "version": "1.0.0",
+  "description": "WhatsApp Bot for Captains of Baghdad Hawks",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.6.0",
+    "baileys-redis-auth": "^1.0.3",
+    "pino": "^8.19.0",
+    "qrcode-terminal": "^0.12.0",
+    "fs": "0.0.1-security",
+    "fluent-ffmpeg": "^2.1.2",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "redis": "^4.6.0",
+    "express": "^4.18.2"
+  }
+}
